@@ -1,0 +1,71 @@
+<mat-card>
+  <mat-card-content>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form [formGroup]="form" (submit)="onSubmit()" *ngIf="!isLoading && isAuth">
+      <mat-form-field class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input
+          formControlName="title"
+          matInput
+          name="title"
+          placeholder="Ex. It makes me feel..."
+        />
+        <mat-error
+          *ngIf="form.get('title').invalid && form.get('title').touched"
+          >Please enter a post title</mat-error
+        >
+      </mat-form-field>
+
+      <div class="pick-image-container">
+        <button
+          color="primary"
+          mat-stroked-button
+          type="button"
+          (click)="pickFile.click()"
+        >
+          Pick image
+        </button>
+        <input type="file" #pickFile (change)="onImagePicked($event)" />
+      </div>
+      <div
+        class="pick-image-preview"
+        *ngIf="imgPreview !== '' && imgPreview && form.get('image').valid"
+      >
+        <img [src]="imgPreview" [alt]="form.value.title" />
+      </div>
+      <mat-error
+        *ngIf="form.get('image').invalid && imgPreview !== '' && imgPreview"
+        >Invalid file!</mat-error
+      >
+      <mat-form-field class="example-full-width">
+        <mat-label>Leave a comment</mat-label>
+        <textarea
+          formControlName="content"
+          matInput
+          rows="6"
+          name="content"
+          placeholder="Ex. It makes me feel..."
+        ></textarea>
+        <mat-error
+          *ngIf="form.get('content').invalid && form.get('content').touched"
+          >Please enter a post content</mat-error
+        >
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Submit
+      </button>
+    </form>
+    <h4
+      style="text-align: center; color: white"
+      class="mat-body-1"
+      *ngIf="!isLoading && !isAuth"
+    >
+      Please login or signup first!
+    </h4>
+  </mat-card-content>
+</mat-card>

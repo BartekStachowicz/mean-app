@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon>comment</mat-icon>
+    <span style="margin-left: 20px">MEAN</span>
+    <span class="example-spacer-2"></span>
+    <nav
+      mat-tab-nav-bar
+      color="primary"
+      backgroundColor="primary"
+      [tabPanel]="tabPanel"
+    >
+      <a
+        mat-tab-link
+        *ngFor="let link of navLinks"
+        [routerLinkActiveOptions]="
+          link.exact ? { exact: true } : { exact: false }
+        "
+        [routerLink]="link.link"
+        routerLinkActive
+        #rla="routerLinkActive"
+        [active]="rla.isActive"
+        >{{ link.label }}</a
+      >
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+    <span class="example-spacer" *ngIf="!(isHandset$ | async)"></span>
+    <a
+      mat-button
+      routerLink="/login"
+      routerLinkActive="active"
+      *ngIf="!(isHandset$ | async) && !isAuth"
+      >Login</a
+    >
+    <a mat-button *ngIf="!(isHandset$ | async) && isAuth" (click)="onLogout()"
+      >Logout</a
+    >
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="isHandset$ | async">
+    <a mat-button routerLink="/login" routerLinkActive="active" *ngIf="!isAuth"
+      >Login</a
+    >
+    <a mat-button *ngIf="isAuth" (click)="onLogout()">Logout</a>
+  </mat-toolbar-row>
+</mat-toolbar>

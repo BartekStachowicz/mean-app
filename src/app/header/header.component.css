@@ -1,0 +1,15 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-spacer-2 {
+  flex: 0.1 1 auto;
+}
+
+.mat-toolbar.mat-primary {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}

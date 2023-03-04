@@ -1,0 +1,32 @@
+.mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+:host {
+  display: block;
+  margin-top: 2rem;
+}
+
+.posts-list {
+  margin-top: 1rem;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.post-image {
+  width: 50%;
+  margin: auto;
+  margin-top: 0.5rem;
+}
+
+.post-image img {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+mat-paginator {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
