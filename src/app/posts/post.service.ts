@@ -92,6 +92,7 @@ export class PostService {
   }
 
   deletePost(id: string) {
+    console.log(URL);
     return this.http.delete(URL + id);
   }
 }
