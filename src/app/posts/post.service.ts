@@ -5,7 +5,7 @@ import { Post } from './post.model';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
-const URL = environment.apiPostsURL;
+const URL = environment.apiURL + '/api/posts/';
 
 @Injectable({ providedIn: 'root' })
 export class PostService {

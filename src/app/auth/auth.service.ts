@@ -5,6 +5,9 @@ import { Subject } from 'rxjs';
 import { AuthData } from './auth-data.model';
 import { environment } from 'src/environments/environment';
 
+const SIGNUPURL = environment.apiURL + '/api/user/signup/';
+const LOGINURL = environment.apiURL + '/api/user/login/';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -38,7 +41,7 @@ export class AuthService {
       email: email,
       password: password,
     };
-    this.http.post(environment.apiAuthSignupURL, authData).subscribe(
+    this.http.post(SIGNUPURL, authData).subscribe(
       () => {
         this.router.navigate(['/login']);
       },
@@ -52,7 +55,7 @@ export class AuthService {
     const authData: AuthData = { email: email, password: password };
     this.http
       .post<{ token: string; expiresIn: number; userId: string }>(
-        environment.apiAuthLoginURL,
+        LOGINURL,
         authData
       )
       .subscribe(
