@@ -41,12 +41,12 @@ Single page application bulid with MEAN stack.
 
 ### Built With
 
-[![MongoDB][mongo]][mongo-url] & [![Express][express]][express-url] & [![Angular][angular]][angular-url] & [![NodeJS][node]][node-url] & <br/>
+[![MongoDB][mongo]][mongo-url] & [![Express][express]][express-url] & [![Angular][angular]][angular-url] & [![NodeJS][node]][node-url] <br/>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ### Hosted on
 
-[![Firebase][firebase]][firebase-url]
+[![AWS][aws]][aws-url]
 
 ## Contact
 
