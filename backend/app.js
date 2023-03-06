@@ -21,12 +21,6 @@ mongoose
     console.log("Connection failed!");
   });
 
-app.use(
-  cors({
-    origin: "http://localhost:4200",
-    optionsSuccessStatus: 200,
-  })
-);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/images", express.static(path.join("images")));
