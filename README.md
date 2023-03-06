@@ -24,7 +24,6 @@ Single page application bulid with MEAN stack.
 
 ![MEAN_PREVIEW][preview-app]
 <br/>
-<br/>
 
 ### Short description
 
@@ -34,8 +33,6 @@ Single page application bulid with MEAN stack.
   <li>2. Create, edit and delete your own posts</li>
 </ul> 
 </p>
-
-<hr>
 
 <hr>
 
